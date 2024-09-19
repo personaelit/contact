@@ -71,7 +71,7 @@ function sendEmail(name, email, message, address, city, state, zip, sample_types
 }
 
 // Start the server
-const PORT = 3000;
+const PORT = process.env.PORT || 3000; // Default to 3000 if not set
 app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+    console.log(`Server running on port ${PORT}`);
 });

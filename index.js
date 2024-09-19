@@ -42,7 +42,7 @@ function createEmailBody(name, email, message, address, city, state, zip, sample
 }
 
 // Update sendEmail function to use createEmailBody
-function sendEmail(name, email, message, address, city, state, zip, sample_types, other_specify) {
+function sendEmail(name, email, message, address, city, state, zip, sample_types, other_specify, company, country) {
     const formattedMessage = createEmailBody(name, email, message, address, city, state, zip, sample_types, other_specify, company, country);
     
     const transporter = nodemailer.createTransport({

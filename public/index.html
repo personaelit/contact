@@ -1,68 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Form</title>
-    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <img src="images/logo.png" alt="Logo" class="logo">
-    <h1>Sample Request Form</h1>
-    <div id="thank-you-message" style="display: none;">
-        <h2>Thank You!</h2>
-        <p>Your submission has been received. We will get back to you shortly.</p>
+    <div class="container">
+        <img src="images/logo.png" alt="Logo" class="logo">
+        <h1>Sample Request Form</h1>
+        <div id="thank-you-message" style="display: none;">
+            <h2>Thank You!</h2>
+            <p>Your submission has been received. We will get back to you shortly.</p>
+        </div>
+        <form action="/submit" method="POST" class="contact-form" id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label>Sample Types:</label><br>
+            <input type="checkbox" id="locking" name="sample_types" value="Locking Power Cords">
+            <label for="locking">Locking Power Cords</label><br>
+            <input type="checkbox" id="stayonline" name="sample_types" value="StayOnline FLX Power Cords">
+            <label for="stayonline">StayOnline FLX Power Cords</label><br>
+            <input type="checkbox" id="datacenter" name="sample_types" value="Data Center Power Cords">
+            <label for="datacenter">Data Center Power Cords</label><br>
+            <input type="checkbox" id="industrial" name="sample_types" value="Industrial Power Cords">
+            <label for="industrial">Industrial Power Cords</label><br>
+            <input type="checkbox" id="custom" name="sample_types" value="Custom Power Cords">
+            <label for="custom">Custom Power Cords</label><br>
+            <input type="checkbox" id="india" name="sample_types" value="India (BIS) Power Cords">
+            <label for="india">India (BIS) Power Cords</label><br>
+            <input type="checkbox" id="highcapacity" name="sample_types" value="High Capacity (30Amp+) Power Cords">
+            <label for="highcapacity">High Capacity (30Amp+) Power Cords</label><br>
+            <input type="checkbox" id="medical" name="sample_types" value="Medical Power Cords">
+            <label for="medical">Medical Power Cords</label><br>
+            <input type="checkbox" id="international" name="sample_types" value="International Power Cords">
+            <label for="international">International Power Cords</label><br>
+            <input type="checkbox" id="other" name="sample_types" value="Other">
+            <label for="other">Other (Please Specify)</label><br>
+            <input type="text" id="other_specify" name="other_specify"><br><br>
+
+            <label for="address">Shipping Address 1:</label>
+            <input type="text" id="address1" name="address" required><br><br>
+
+            <label for="address">Shipping Address 2:</label>
+            <input type="text" id="address2" name="address"><br><br>
+
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" required><br><br>
+
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" required><br><br>
+
+            <label for="zip">Zip Code:</label>
+            <input type="text" id="zip" name="zip" required><br><br>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea><br><br>
+
+           
+
+            <button type="submit">Submit</button>
+        </form>
     </div>
-    <form action="/submit" method="POST" class="contact-form" id="contact-form">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required><br><br>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br><br>
-
-        <label for="address">Shipping Address 1:</label>
-        <input type="text" id="address1" name="address" required><br><br>
-
-        <label for="address">Shipping Address 2:</label>
-        <input type="text" id="address2" name="address"><br><br>
-
-        <label for="city">City:</label>
-        <input type="text" id="city" name="city" required><br><br>
-
-        <label for="state">State:</label>
-        <input type="text" id="state" name="state" required><br><br>
-
-        <label for="zip">Zip Code:</label>
-        <input type="text" id="zip" name="zip" required><br><br>
-
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" required></textarea><br><br>
-
-        <label>Sample Types:</label><br>
-        <input type="checkbox" id="locking" name="sample_types" value="Locking Power Cords">
-        <label for="locking">Locking Power Cords</label><br>
-        <input type="checkbox" id="stayonline" name="sample_types" value="StayOnline FLX Power Cords">
-        <label for="stayonline">StayOnline FLX Power Cords</label><br>
-        <input type="checkbox" id="datacenter" name="sample_types" value="Data Center Power Cords">
-        <label for="datacenter">Data Center Power Cords</label><br>
-        <input type="checkbox" id="industrial" name="sample_types" value="Industrial Power Cords">
-        <label for="industrial">Industrial Power Cords</label><br>
-        <input type="checkbox" id="custom" name="sample_types" value="Custom Power Cords">
-        <label for="custom">Custom Power Cords</label><br>
-        <input type="checkbox" id="india" name="sample_types" value="India (BIS) Power Cords">
-        <label for="india">India (BIS) Power Cords</label><br>
-        <input type="checkbox" id="highcapacity" name="sample_types" value="High Capacity (30Amp+) Power Cords">
-        <label for="highcapacity">High Capacity (30Amp+) Power Cords</label><br>
-        <input type="checkbox" id="medical" name="sample_types" value="Medical Power Cords">
-        <label for="medical">Medical Power Cords</label><br>
-        <input type="checkbox" id="international" name="sample_types" value="International Power Cords">
-        <label for="international">International Power Cords</label><br>
-        <input type="checkbox" id="other" name="sample_types" value="Other">
-        <label for="other">Other (Please Specify)</label><br>
-        <input type="text" id="other_specify" name="other_specify"><br><br>
-
-        <button type="submit">Submit</button>
-    </form>
 
     <script>
         // Check for 'thanks' query parameter
@@ -73,4 +79,5 @@
         }
     </script>
 </body>
+
 </html>

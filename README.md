@@ -1,2 +1,2 @@
 # contact
-Contact for for stayonline.com
+Contact for stayonline.com

@@ -1,10 +1,10 @@
 {
   "name": "contact",
   "version": "1.0.0",
-  "description": "Contact for for stayonline.com",
+  "description": "Contact for stayonline.com",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\""
+    "test": "echo \"Warning: no test specified\""
   },
   "keywords": [],
   "author": "",

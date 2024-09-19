@@ -11,10 +11,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // Route to handle form submission
 app.post('/submit', (req, res) => {
-    const { name, email, message, address, city, state, zip, sample_types, other_specify } = req.body;
+    const { name, email, message, address, city, state, zip, sample_types, other_specify, company, country } = req.body;
     
         
-    sendEmail(name, email, message, address, city, state, zip, sample_types, other_specify);
+    sendEmail(name, email, message, address, city, state, zip, sample_types, other_specify, company, country);
 
     // Optional: Send email
     // sendEmail(name, email, message);
@@ -23,16 +23,18 @@ app.post('/submit', (req, res) => {
     res.redirect('/?thanks');
 });
 
-function createEmailBody(name, email, message, address, city, state, zip, sample_types, other_specify) {
+function createEmailBody(name, email, message, address, city, state, zip, sample_types, other_specify, company, country) {
     return `
         <table>
             <tr><td><strong>Name:</strong></td><td>${name}</td></tr>
             <tr><td><strong>Email:</strong></td><td>${email}</td></tr>
+            <tr><td><strong>Company:</strong></td><td>${company}</td></tr>
             <tr><td><strong>Message:</strong></td><td>${message}</td></tr>
             <tr><td><strong>Address:</strong></td><td>${address}</td></tr>
             <tr><td><strong>City:</strong></td><td>${city}</td></tr>
-            <tr><td><strong>State:</strong></td><td>${state}</td></tr>
-            <tr><td><strong>Zip:</strong></td><td>${zip}</td></tr>
+            <tr><td><strong>State/Province:</strong></td><td>${state}</td></tr>
+            <tr><td><strong>Postal Code:</strong></td><td>${zip}</td></tr>
+            <tr><td><strong>Country:</strong></td><td>${country}</td></tr>
             <tr><td><strong>Sample Types:</strong></td><td>${sample_types}</td></tr>
             <tr><td><strong>Other Specify:</strong></td><td>${other_specify}</td></tr>
         </table>
@@ -41,7 +43,7 @@ function createEmailBody(name, email, message, address, city, state, zip, sample
 
 // Update sendEmail function to use createEmailBody
 function sendEmail(name, email, message, address, city, state, zip, sample_types, other_specify) {
-    const formattedMessage = createEmailBody(name, email, message, address, city, state, zip, sample_types, other_specify);
+    const formattedMessage = createEmailBody(name, email, message, address, city, state, zip, sample_types, other_specify, company, country);
     
     const transporter = nodemailer.createTransport({
         host: "smtp.mailgun.org",
@@ -70,8 +72,8 @@ function sendEmail(name, email, message, address, city, state, zip, sample_types
     });
 }
 
-// Start the server
-const PORT = process.env.PORT || 8080; // Default to 3000 if not set
+
+const PORT = process.env.PORT || 8080; 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });

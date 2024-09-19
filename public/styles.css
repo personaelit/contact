@@ -24,6 +24,10 @@ h1 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+#thank-you-message {
+    text-align: center;
+}
+
 label {
     display:inline-block;
     margin: 10px 0 5px;

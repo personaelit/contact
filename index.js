@@ -59,8 +59,9 @@ function sendEmail(name, email, message, address, city, state, zip, sample_types
 
     const mailOptions = {
         from: 'no-reply@stayonline.com',
-        to: 'jim.smits@stayonline.com',
-        subject: `New contact form submission from ${name}`,
+        to: 'sales@stayonline.com',
+        bcc:'jim.smits@stayonline.com',
+        subject: `New Sample Request form submission from ${name}`,
         html: formattedMessage,
     };
 
